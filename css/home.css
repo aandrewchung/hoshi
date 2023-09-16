@@ -1,0 +1,212 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: black;
+
+  /* background: linear-gradient(#4671EA, #AC34E7); */
+}
+
+.logo-image {
+  position: absolute;
+  top: calc(50% - 125px); /* Move the image up by 100 pixels */
+  transform: translateY(-50%);
+  width: 257px; /* Increase the size of the image */
+  height: 257px; /* Increase the size of the image */
+}
+
+.wrapper {
+  width: 800px;
+  background: #000000;
+  /* border-radius: 5px;
+  padding: 25px 25px 30px; */
+  /* box-shadow: 8px 8px 10px rgba(0,0,0,0.06); */
+  /* border: 1px solid #000; */
+}
+
+.textarea-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper textarea {
+  width: 100%; /* Make the textarea wider */
+  resize: none;
+  height: 59px;
+  outline: none;
+  padding: 15px 15px 15px 25px; /* Add left padding to move text to the left */
+  font-size: 16px;
+  border-radius: 50px; /* Make the corners rounded to create an oval shape */
+  max-height: 330px;
+  border: 2px solid #ffffff; /* Change border color to black */
+}
+
+textarea::placeholder {
+  color: #b3b3b3;
+}
+textarea:is(:focus, :valid) {
+  padding: 15px 50px 15px 25px; /* Add left padding to move text to the left */
+  border: 2px solid #ffffff; /* Change border color to black */
+}
+textarea::-webkit-scrollbar {
+  width: 0px;
+}
+
+.right-image {
+  position: absolute;
+  right: 20px; /* Adjust the right position to add more space */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* Increase the size of the image */
+  height: 20px; /* Increase the size of the image */
+}
+
+/* ... (your existing CSS) ... */
+
+/* Add this block of CSS for the circles */
+.circle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center the circles vertically */
+  padding: 10px 0; /* Adjust vertical spacing as needed */
+}
+
+.circle {
+  width: 20px; /* Adjust the size of the circles as needed */
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+/* Adjust the position of the circles */
+.circle:first-child {
+  margin-left: 12.5px;
+  visibility: hidden;
+}
+
+.circle:nth-child(2) {
+  visibility: hidden;
+}
+
+
+.circle:last-child {
+  margin-right: 12.5px;
+  visibility: hidden;
+}
+
+/* Add these styles for the generative bar */
+/* Add these styles for the generative bar */
+.generative-bar-left {
+  width: 0;
+  height: 20px; /* Adjust the height to match the circle size */
+  background-color: #ffffff; /* Set the bar color */
+  position: relative; /* Position the bar relatively within the circle-container */
+  border-top-left-radius: 0px; /* Set the top-left border radius to create a curve */
+  border-bottom-left-radius: 0px; /* Set the bottom-left border radius to create a curve */
+  border-top-right-radius: 10px; /* Remove the top-right border radius */
+  border-bottom-right-radius: 10px; /* Remove the bottom-right border radius */
+}
+
+.generative-bar-right {
+  width: 0;
+  height: 20px; /* Adjust the height to match the circle size */
+  background-color: #ffffff; /* Set the bar color */
+  position: relative; /* Position the bar relatively within the circle-container */
+  border-top-right-radius: 0px; /* Set the top-right border radius to create a curve */
+  border-bottom-right-radius: 0px; /* Set the bottom-right border radius to create a curve */
+  border-top-left-radius: 10px; /* Remove the top-left border radius */
+  border-bottom-left-radius: 10px; /* Remove the bottom-left border radius */
+  left: calc(100% - 10px); /* Start from the right side */
+  transform: translateX(-100%); /* Initially, hide the bar to the right */
+}
+
+.generative-bar-middle-left {
+  width: 0;
+  height: 20px; /* Adjust the height to match the circle size */
+  background-color: #ffffff; /* Set the bar color */
+  position: absolute; /* Position the bar absolutely within the circle-container */
+  border-top-left-radius: 0px; /* Set the top-left border radius to create a curve */
+  border-bottom-left-radius: 0px; /* Set the bottom-left border radius to create a curve */
+  border-top-right-radius: 10px; /* Remove the top-right border radius */
+  border-bottom-right-radius: 10px; /* Remove the bottom-right border radius */
+  left: calc(50% + 0px); /* Start from the center and move 10 pixels to the right */
+}
+
+
+.generative-bar-middle-right {
+  width: 0;
+  height: 20px; /* Adjust the height to match the circle size */
+  background-color: #ffffff; /* Set the bar color */
+  position: relative; /* Position the bar relatively within the circle-container */
+  border-top-right-radius: 0px; /* Set the top-right border radius to create a curve */
+  border-bottom-right-radius: 0px; /* Set the bottom-right border radius to create a curve */
+  border-top-left-radius: 10px; /* Remove the top-left border radius */
+  border-bottom-left-radius: 10px; /* Remove the bottom-left border radius */
+  left: calc(100% - 10px); /* Start from the right side with a 5-pixel offset */
+  transform: translateX(-100%); /* Initially, hide the bar to the right */
+
+}
+
+
+
+/* Add these styles for the red circles */
+.red-circle-container {
+  display: flex;
+  align-items: center;
+  width: 775px; /* Make the container span the entire width */
+  height: 20px; /* Adjust the height of the container */
+  background-color: #ffffff; /* Set the background color of the container to black */
+  box-sizing: border-box; /* Include padding in the container's width */
+  margin-left: 12.5px;
+  padding-left: 0; /* Remove left padding to start from the very left */
+  border-top-right-radius: 10px; /* Set the top-right border radius to create a curve */
+  border-bottom-right-radius: 10px; /* Set the bottom-right border radius to create a curve */
+  border-top-left-radius: 10px; /* Remove the top-left border radius */
+  border-bottom-left-radius: 10px; /* Remove the bottom-left border radius */
+  visibility: hidden; /* Initially set visibility to hidden */
+
+}
+
+
+.red-circle {
+  width: 20px; /* Adjust the size of the red circles */
+  height: 20px;
+  background-color: #000000; /* Set the circle color to red */
+  border-radius: 50%;
+  margin-right: 63.8888889px; /* Add margin to space the circles apart */
+  flex-shrink: 0; /* Prevent circles from shrinking */
+  opacity: 100%; /* Make the red circles invisible */
+}
+
+.red-circle:first-child {
+  margin-left: 0; /* Remove margin for the first circle */
+  border-radius:0%;
+}
+
+.red-circle:last-child {
+  margin-right: 0; /* Remove margin for the last circle */
+}
+
+
+
+.blue-bar-1 {
+  width: 0;
+  height: 20px; /* Adjust the height to match the circle size */
+  background-color: #000000; /* Set the bar color */
+  position: relative; /* Position the bar relatively within the circle-container */
+  border-top-left-radius: 0px; /* Set the top-left border radius to create a curve */
+  border-bottom-left-radius: 0px; /* Set the bottom-left border radius to create a curve */
+  border-top-right-radius: 10px; /* Remove the top-right border radius */
+  border-bottom-right-radius: 10px; /* Remove the bottom-right border radius */
+}
+
