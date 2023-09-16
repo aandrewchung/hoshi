@@ -220,8 +220,9 @@ async function handleEnterKey() {
 
         // Select the textarea element by its ID
         const textarea = document.querySelector("textarea");
-        outputs.push(textarea.value);
+        outputs.push(textarea.value.replace(/[,.]/g, ''));
 
+        console.log("characters: ", textarea.value);
         // Change the placeholder text
         textarea.placeholder = 'character(s)...';
         // textarea.style.transition = transition;
@@ -240,7 +241,7 @@ async function handleEnterKey() {
     if (enterCounter == 2) {
         // Select the textarea element by its ID
         const textarea = document.querySelector("textarea");
-        outputs.push(textarea.value);
+        outputs.push(textarea.value.replace(/[,.]/g, ''));
         // Change the placeholder text
         textarea.placeholder = 'story. . .';
         textarea.style.height = "59px";
@@ -267,8 +268,8 @@ async function handleEnterKey() {
 
         editGenerativeBars();
         const story = shrinkTextarea();
-        outputs.push(story);
-        console.log(outputs);
+        outputs.push(story.replace(/[,.]/g, ''));
+        // console.log(outputs);
 
 
         const inputFile = '1.txt';
@@ -312,7 +313,7 @@ async function handleEnterKey() {
 
 
         await delay(160000);
-
+        console.log("Delay is over");
         window.location.href = 'comic.html';
     }
 
