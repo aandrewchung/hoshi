@@ -80,18 +80,11 @@ async function main(title, characters, story) {
 
 
 const story = `
-In a sunny, peaceful suburban neighborhood filled with colorful houses and lush gardens, 
-Sarah, a kind-hearted young girl, was playing in her front yard when she suddenly realized 
-her fluffy orange kitten, Whiskers, was missing. Her heart filled with worry, she embarked 
-on a search throughout the neighborhood, calling out Whiskers' name. Her determined quest 
-led her to discover Whiskers hiding under a bush in a neighbor's garden, frightened by a loud noise. 
-With gentle coaxing, Sarah reunited with her beloved pet, and Whiskers purred happily 
-in recognition. Cradling Whiskers in her arms, Sarah comforted him with soft words 
-as they made their way back home. Together, they returned to their front yard, 
-continuing their playtime, their bond stronger than ever.
+In the final moments of the championship match, with the score tied and tension in the air, Andrew, a steadfast member of the soccer team, seized the opportunity of a lifetime. As the clock ticked down, he dribbled past defenders with unwavering determination, the ball seemingly an extension of his being. With a swift, precise strike, he sent the ball soaring into the net, igniting a deafening roar from the crowd. Andrew's last-minute goal secured victory, etching his name in soccer lore and crowning his team as tournament champions.
+
 `;
 
-const characters = "Sarah is a kind hearted young girl. Whiskers is a fluffy orange cat.";
+const characters = "Andrew is a white haired male with blue eyes";
 
 // main("test", characters, story);
 
@@ -157,7 +150,7 @@ const characters = "Sarah is a kind hearted young girl. Whiskers is a fluffy ora
     
             await main(inputData.title, inputData.description, inputData.story);
     
-            const inputPdfPath = 'C:\\Users\\andro\\Documents\\spaceme\\pdfs\\output0.pdf'; // Correct input PDF file path
+            const inputPdfPath = 'C:\\Users\\andro\\Documents\\hoshi\\pdfs\\output0.pdf'; // Correct input PDF file path
             const outputImagePath = 'images/comics/0.png'; // Specify your desired output image file path
     
             await convertPdfToImage(inputPdfPath, outputImagePath);

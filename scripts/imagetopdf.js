@@ -23,7 +23,7 @@ async function createVerticalPDF(imagePaths, outputPath, dialogues, title) {
   const verticalGap = (pageHeight - (4 * imageHeight)) / 5 * 0.5; // Vertical gap between images
   // const verticalTopTitle = 30;
   const verticalTopTitle = pageHeight - (4 * (imageHeight + 2 *borderSize) + 3*verticalGap) - horizontalGap;
-  const textSize = 4.5;
+  var textSize = 4.5;
 
 
   // const captionPath = '';
@@ -57,27 +57,31 @@ async function createVerticalPDF(imagePaths, outputPath, dialogues, title) {
       textType = 0
     }
     //Short string
-    else if(diaLength <= 10){
+    else if(n == 0 && diaLength <= 7){
       //Length 1 gets 1 or 2
       textType = 1;
       textType += Math.floor(Math.random()*2);
     }
     //Bubbles 5, 6 (smaller medium)
-    else if(largest < 5){
+    else if(largest <= 7){
+      largest = 7;
       textType = 5;
       textType += Math.floor(Math.random()*2);
     }
     //Bubbles 3, 4 (bigger medium)
-    else if(largest <= 7){
+    else if(largest <= 9){
+      largest = 9;
       textType = 3;
       textType += Math.floor(Math.random()*2);
     }
     //Bubbles 
-    else if(largest <= 9){
+    else if(largest <= 11){
+      largest = 11;
       textType = 7;
       textType += Math.floor(Math.random()*4);
     }
     else{
+      largest = 15;
       textType = 11;
       textType += Math.floor(Math.random()*2);
     }
@@ -236,7 +240,7 @@ async function createVerticalPDF(imagePaths, outputPath, dialogues, title) {
         width: 120,
         height: 120,
       });    
-      textX = x + 45;
+      textX = x + 48;
       textY = await findStartVal(y + 50, y, textSize, n);
     }
     else if(textType == 12){
@@ -311,7 +315,7 @@ async function createHorizontalPDF(imagePaths, outputPath) {
   const verticalGap = (pageHeight - (2 * imageHeight)) / 3; // Vertical gap between images
   const horizontalLeftTitle = pageWidth - (4 * (imageWidth + 2 * borderSize) + 3 * horizontalGap) - verticalGap;
 
-  const textSize = 20;
+  var textSize = 20;
   const page = pdfDoc.addPage([pageWidth, pageHeight]);
 
   for (let i = 0; i < imagePaths.length; i++) {
@@ -377,8 +381,11 @@ async function findStartVal(y1, y2, size, n) {
   return start;
 }
 
-
 async function prepString(words, largest){
+  if(largest <= 7) largest = 7;
+  else if(largest <= 9) largest = 9;
+  else if(largest <= 11) largets = 11;
+  else largest = 13;
   var charCount = 0;
   var result = '';
   var n = 0;
@@ -386,7 +393,7 @@ async function prepString(words, largest){
   const wordsList = words.split(' ');
   for (const word of wordsList){
     // console.log(word);
-    if (charCount + word.length <= largest + 1){
+    if (charCount + word.length <= largest + 2){
       result += (word + ' ');
       charCount += (word.length + 1)
     }
@@ -404,26 +411,26 @@ async function prepString(words, largest){
 
 
 
-module.exports = { createVerticalPDF , createHorizontalPDF};
+module.exports = { createVerticalPDF, createHorizontalPDF };
 
-const imagePaths = [];
-for (let i = 0; i < 32; i+=4) {
-  imagePaths.push(`../spaceme/images/panels/${i}.jpeg`);
-}
-const dialogues = [
-  [ 'NULL', 0 ],
-  [ 'Oh no Whiskers!', 9 ],
-  [ 'Whiskers, where are you?', 8 ],
-  [ 'Ah, there you are!', 5 ],
-  [ "Come on, Whiskers, it's okay", 8 ],
-  [ 'Safe and sound, Whiskers.', 9 ],
-  [ "It's alright, Whiskers.", 8 ],
-  [ 'Happiness in our yard!', 9 ]
-];
-const verticalPath = 'pdfs/output0.pdf';
-const horizontalPath = 'pdfs/output1.pdf';
+// const imagePaths = [];
+// for (let i = 0; i < 32; i+=4) {
+//   imagePaths.push(`../spaceme/images/panels/${i}.jpeg`);
+// }
+// const dialogues = [
+//   [ 'NULL', 0 ],
+//   [ 'Oh no!', 9 ],
+//   [ 'Whiskers, where are you?', 8 ],
+//   [ 'Ah, there you are!', 5 ],
+//   [ "Come on, Whiskers, it's okay", 8 ],
+//   [ 'Safe and sound, Whiskers.', 9 ],
+//   [ "It's alright, Whiskers.", 8 ],
+//   [ 'Happiness in our yard!', 9 ]
+// ];
+// const verticalPath = 'pdfs/output0.pdf';
+// const horizontalPath = 'pdfs/output1.pdf';
 
-// createVerticalPDF(imagePaths, verticalPath, dialogues, 's Sample Title')
+// createVerticalPDF(imagePaths, verticalPath, dialogues, "Where's Whiskers?")
 //   .then(() => console.log('Vertical PDF created successfully'))
 //   .catch((err) => console.error('Error creating PDF:', err));
 // createHorizontalPDF(imagePaths, horizontalPath)

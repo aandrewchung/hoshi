@@ -48,7 +48,7 @@ body {
   font-size: 16px;
   border-radius: 50px; /* Make the corners rounded to create an oval shape */
   max-height: 330px;
-  border: 2px solid #ffffff; /* Change border color to black */
+  border: 2px solid #000000; /* Change border color to black */
 }
 
 textarea::placeholder {
@@ -210,3 +210,11 @@ textarea::-webkit-scrollbar {
   border-bottom-right-radius: 10px; /* Remove the bottom-right border radius */
 }
 
+.ani {
+  visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0%;
+}

@@ -301,7 +301,17 @@ async function handleEnterKey() {
 
         await dotBars();
 
-        await delay(180000);
+        // Select the element with the class .ani
+        const aniElement = document.querySelector('.ani');
+
+        // Change its visibility to 'visible'
+        aniElement.style.visibility = 'visible';
+        aniElement.style.opacity = '1';
+        aniElement.style.transition = 'opacity 1.5s ease-in';
+
+
+
+        await delay(160000);
 
         window.location.href = 'comic.html';
     }
