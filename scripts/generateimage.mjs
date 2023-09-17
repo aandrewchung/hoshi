@@ -3,7 +3,7 @@ import { convertAndSaveImage } from './imgdatatojpeg.js';
 import { extractPanels } from './storytopanels.js';
 import { createVerticalPDF, createHorizontalPDF } from './imagetopdf.js';
 import fs from 'fs';
-import { convertPdfToImage } from './pdftocomicimg.js';
+import { convertPdfToImage } from './pdftoimg.js';
 
 
 async function main(title, characters, story) {
