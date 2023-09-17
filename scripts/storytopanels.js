@@ -1,4 +1,4 @@
-const generateChatGPTResponse = require('./gptprompt.js');
+const generateChatGPTResponse = require('./gpt.js');
 const extractTextChunks = require('./extracttext.js');
 
 
