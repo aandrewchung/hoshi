@@ -1,6 +1,4 @@
 const generateChatGPTResponse = require('./gpt.js');
-const extractTextChunks = require('./extracttext.js');
-
 
 async function parseCharacters(rawCharacters) {
   const charactersPrompt = `You are a helpful bot that takes a paragraph describing characters and outputs organized data about each character. 
