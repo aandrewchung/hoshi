@@ -1,5 +1,5 @@
 import { generateImageFiles, generateImagesLinks } from "bimg";
-import { convertAndSaveImage } from './convertimagedata.js';
+import { convertAndSaveImage } from './imgdatatojpeg.js';
 import { extractPanels } from './storytopanels.js';
 import { createVerticalPDF, createHorizontalPDF } from './imagetopdf.js';
 import fs from 'fs';
